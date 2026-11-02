@@ -3,42 +3,34 @@
 int main(void)
 {
     int n;
-    scanf("%d", &n);
-
-    if (n < 0)
-    {
-        printf("Error");
+    if (scanf("%d", &n) != 1) {
+        return 0;
     }
-    else if (n == 0)
-    {
-        printf("No");
-    }
-    else
-    {
-        int found = 0;
 
-        if (n % 3 == 0)
-        {
+    if (n < 0) {
+        printf("Error\n");
+    } else if (n == 0) {
+        printf("No\n");
+    } else {
+        int flag = 0;
+
+        if (n % 3 == 0) {
             printf("Up");
-            found = 1;
+            flag = 1;
         }
-
-        if (n % 5 == 0)
-        {
+        if (n % 5 == 0) {
             printf("Go");
-            found = 1;
+            flag = 1;
         }
-
-        if (n % 7 == 0)
-        {
+        if (n % 7 == 0) {
             printf("!!");
-            found = 1;
+            flag = 1;
         }
 
-        if (found == 0)
-        {
+        if (!flag) {
             printf("No");
         }
+        printf("\n");
     }
 
     return 0;
